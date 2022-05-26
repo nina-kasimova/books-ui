@@ -1,0 +1,12 @@
+<table>
+  <th *ngFor="let column of headers">
+    {{column.label}}
+  </th>
+  <tr *ngFor="let b of books">
+    <td>{{ b.title}}</td>
+    <td>{{ b.author}}</td>
+    <td>{{ b.description}}</td>
+    <td>{{ b.rating}}</td>
+  </tr>
+</table>
+
