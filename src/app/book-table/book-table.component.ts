@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from './data-source';
+import { BOOKS} from "../mock-heroes";
+import { Books } from '../books';
 
 @Component({
   selector: 'book-table',
@@ -11,8 +12,6 @@ export class BookTableComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit(): void {
-  }
   title = 'Book Browser';
 
   headers = [
@@ -21,30 +20,15 @@ export class BookTableComponent implements OnInit {
     { key: 'description', label: 'Description' },
     { key: 'rating', label: 'Rating' }
   ];
-  get books(): Book[] {
-    return [
-      {
-        id: 1,
-        title: 'The Lord of the Rings',
-        author: 'J.R.R. Tolkien',
-        description: 'The Lord of the Rings.',
-        rating: 4.5},
-      {
-        id: 2,
-        title: 'The Hobbit',
-        author: 'J.R.R. Tolkien',
-        description: 'The Hobbit.',
-        rating: 4.5},
-      {
-        id: 3,
-        title: 'The Catcher in the Rye',
-        author: 'J.D. Salinger',
-        description: 'The Catcher in the Rye.',
-        rating: 4.5},
-      ];
-}
 
-  onClick(book: Book) {
+  ngOnInit(): void {
+  }
+
+  get books(): Books[] {
+    return BOOKS;
+  }
+
+  onClick(book: Books) {
     console.log(book);
   }
 }

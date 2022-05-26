@@ -7,11 +7,13 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { BookTableComponent } from './book-table/book-table.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookTableComponent
+    BookTableComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
