@@ -42,7 +42,14 @@ export class BookTableComponent implements OnInit {
         description: 'The Catcher in the Rye.',
         rating: 4.5},
       ];
-}}
+}
+
+  onClick(book: Book) {
+    console.log(book);
+    console.log('clicked');
+  }
+}
+
 
 
 
