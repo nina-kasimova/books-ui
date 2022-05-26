@@ -15,6 +15,7 @@ export class BookTableComponent implements OnInit {
   title = 'Book Browser';
 
   headers = [
+    {key: 'id', label: 'ID'},
     { key: 'title', label: 'Title' },
     { key: 'author', label: 'Author' },
     { key: 'description', label: 'Description' },
