@@ -13,6 +13,7 @@ export class BookTableComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title = 'Book Browser';
 
   headers = [
     { key: 'title', label: 'Title' },

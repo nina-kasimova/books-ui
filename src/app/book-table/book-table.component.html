@@ -1,7 +1,10 @@
-<table>
-  <th *ngFor="let column of headers">
-    {{column.label}}
-  </th>
+<h1>{{title}}</h1>
+<table id="users">
+  <tr>
+    <th *ngFor="let column of headers">
+      {{column.label}}
+    </th>
+  </tr>
   <tr *ngFor="let b of books">
     <td>{{ b.title}}</td>
     <td>{{ b.author}}</td>
