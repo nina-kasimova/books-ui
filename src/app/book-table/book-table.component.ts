@@ -46,7 +46,6 @@ export class BookTableComponent implements OnInit {
 
   onClick(book: Book) {
     console.log(book);
-    console.log('clicked');
   }
 }
 
