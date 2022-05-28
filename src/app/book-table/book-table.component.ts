@@ -33,7 +33,7 @@ export class BookTableComponent implements OnInit {
   }
 
   onClick(book: Books) {
-    this.router.navigate(['/details/', book.id]).then(r => console.log(r));
+    this.router.navigate(['/details/', book.id]);//then(r => console.log(r));
   }
 }
 
