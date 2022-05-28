@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BOOKS} from "../mock-heroes";
 import { Books } from '../books';
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'book-table',
@@ -9,7 +10,9 @@ import { Books } from '../books';
 })
 export class BookTableComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
   }
 
   title = 'Book Browser';
@@ -30,7 +33,7 @@ export class BookTableComponent implements OnInit {
   }
 
   onClick(book: Books) {
-    console.log(book);
+    this.router.navigate(['/details/', book.id]).then(r => console.log(r));
   }
 }
 
