@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BOOKS} from "../mock-heroes";
+import { BOOKS} from "../mock-books";
 import { Books } from '../books';
 import { Router} from "@angular/router";
 
