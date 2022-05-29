@@ -1,6 +1,6 @@
-import { Books } from "./books";
+import { Book } from "./book";
 
-export const BOOKS: Books[] = [
+export const BOOKS: Book[] = [
   {
     id: 1,
     title: 'The Lord of the Rings',

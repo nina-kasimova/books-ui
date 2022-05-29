@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BOOKS} from "../mock-books";
-import { Books } from '../books';
+import { Book } from '../book';
 import { Router} from "@angular/router";
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'book-table',
@@ -11,9 +12,12 @@ import { Router} from "@angular/router";
 export class BookTableComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private bookService: BookService
   ) {
   }
+
+  books: Book[] = BOOKS;
 
   title = 'Book Browser';
 
@@ -28,11 +32,13 @@ export class BookTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get books(): Books[] {
-    return BOOKS;
+  getBooks(): void {
+    this.bookService.getBooks()
+      .subscribe(books => this.books = books);
   }
 
-  onClick(book: Books) {
+
+  onClick(book: Book) {
     this.router.navigate(['/details/', book.id]);//then(r => console.log(r));
   }
 }
