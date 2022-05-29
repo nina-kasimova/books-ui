@@ -30,6 +30,7 @@ export class BookTableComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    this.getBooks();
   }
 
   getBooks(): void {
