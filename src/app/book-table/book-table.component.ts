@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BOOKS} from "../mock-books";
 import { Book } from '../book';
 import { Router} from "@angular/router";
 import { BookService } from '../book.service';
@@ -17,7 +16,8 @@ export class BookTableComponent implements OnInit {
   ) {
   }
 
-  books: Book[] = BOOKS;
+  books: Book[]=[]
+  selectedBook?: Book;
 
   title = 'Book Browser';
 
@@ -29,6 +29,8 @@ export class BookTableComponent implements OnInit {
     { key: 'rating', label: 'Rating' }
   ];
 
+  attributes = ['id', 'title', 'author', 'description', 'rating'];
+
   ngOnInit(): void {
     this.getBooks();
   }
@@ -38,8 +40,9 @@ export class BookTableComponent implements OnInit {
       .subscribe(books => this.books = books);
   }
 
-
   onClick(book: Book) {
+    this.selectedBook = book;
+    console.log("book is selected",this.selectedBook);
     this.router.navigate(['/details/', book.id]);//then(r => console.log(r));
   }
 }

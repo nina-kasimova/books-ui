@@ -17,6 +17,6 @@ export const BOOKS: Book[] = [
     id: 3,
     title: 'The Catcher in the Rye',
     author: 'J.D. Salinger',
-    description: 'The Catcher in the Rye.',
+    description: 'The Catcher in the Rye and other stories',
     rating: 4.5}
   ];
