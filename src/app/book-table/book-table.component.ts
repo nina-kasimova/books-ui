@@ -25,11 +25,11 @@ export class BookTableComponent implements OnInit {
     {key: 'id', label: 'ID'},
     { key: 'title', label: 'Title' },
     { key: 'author', label: 'Author' },
-    { key: 'description', label: 'Description' },
+    { key: 'genre', label: 'Genre' },
     { key: 'rating', label: 'Rating' }
   ];
 
-  attributes = ['id', 'title', 'author', 'description', 'rating'];
+  attributes = ['id', 'title', 'author', 'genre', 'rating'];
 
   ngOnInit(): void {
     this.getBooks();

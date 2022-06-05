@@ -1,4 +1,10 @@
-<div *ngIf="book">
+<nav>
+  <a routerLink="/browser">List of Books</a>
+</nav>
+<div class="book-details" *ngIf="book">
     <h2>{{book.title}}</h2>
-    <p>{{book.description}}</p>
+  <div class="description">
+    {{book.description}}
+  </div>
+
 </div>

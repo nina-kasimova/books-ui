@@ -4,4 +4,8 @@ export interface Book {
   author?: string;
   description?: string;
   rating?: number;
+  reviewCount?: number;
+  genre?: string;
+  shelves?: string[];
+  url?: string;
 }
