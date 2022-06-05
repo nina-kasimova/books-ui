@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BOOKS} from "../mock-books";
 import { Book } from '../book';
 import { Router} from "@angular/router";
 import { BookService } from '../book.service';
+import booksData from '../books.json';
 
 @Component({
   selector: 'book-table',
@@ -17,7 +17,7 @@ export class BookTableComponent implements OnInit {
   ) {
   }
 
-  books: Book[] = BOOKS;
+  books: Book[] = booksData;
 
   title = 'Book Browser';
 

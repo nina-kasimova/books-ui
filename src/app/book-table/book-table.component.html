@@ -5,15 +5,12 @@
       {{column.label}}
     </th>
   </tr>
-  <tr *ngFor="let b of books"
+  <tr *ngFor="let b of books">
     (click) = "onClick(b)">
     <td>{{ b.id}}</td>
-<!--    <a routerLink="/detail/{{b.id}}"><td>{{ b.title}}</td></a>-->
+    <td>{{ b.title}}</td>
     <td>{{ b.author}}</td>
     <td>{{ b.description}}</td>
     <td>{{ b.rating}}</td>
   </tr>
 </table>
-
-<!--https://www.htmlelements.com/docs/angular-routing-tabs/-->
-
