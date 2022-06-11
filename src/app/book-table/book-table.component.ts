@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../book';
 import { Router} from "@angular/router";
 import { BookService } from '../book.service';
-import booksData from '../books.json';
 
 @Component({
   selector: 'book-table',
@@ -11,14 +10,11 @@ import booksData from '../books.json';
 })
 export class BookTableComponent implements OnInit {
 
-  //books: Book[] = booksData;
-
   constructor(
     private router: Router,
     private bookService: BookService
   ) {
   }
-
   selectedBook?: Book;
   books: Book[] = [];
 
@@ -36,7 +32,6 @@ export class BookTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBooks();
-    console.log(this.books);
   }
 
   getBooks(): void {
@@ -46,7 +41,6 @@ export class BookTableComponent implements OnInit {
 
   onClick(book: Book) {
     this.selectedBook = book;
-    console.log("book is selected",this.selectedBook);
     this.router.navigate(['/details/', book.id]);//then(r => console.log(r));
   }
 }

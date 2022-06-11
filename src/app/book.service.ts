@@ -14,7 +14,6 @@ export class BookService {
 
   getBooks(): Observable<Book[]> {
     const books = of(this.temp_books)
-    console.log(books);
     return books;
   }
 
