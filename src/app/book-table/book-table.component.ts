@@ -11,7 +11,7 @@ import booksData from '../books.json';
 })
 export class BookTableComponent implements OnInit {
 
-  books: Book[] = booksData;
+  //books: Book[] = booksData;
 
   constructor(
     private router: Router,
@@ -20,6 +20,7 @@ export class BookTableComponent implements OnInit {
   }
 
   selectedBook?: Book;
+  books: Book[] = [];
 
   title = 'Book Browser';
 
@@ -34,7 +35,7 @@ export class BookTableComponent implements OnInit {
   attributes = ['id', 'title', 'author', 'genre', 'rating'];
 
   ngOnInit(): void {
-    //this.getBooks();
+    this.getBooks();
     console.log(this.books);
   }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Book } from "./book";
-import {BOOKS} from "./mock-books";
 import {catchError, Observable, of, tap} from "rxjs";
+import booksData from './books.json';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,11 @@ export class BookService {
 
   constructor() { }
 
+  temp_books: Book[] = booksData;
+
   getBooks(): Observable<Book[]> {
-    const books = of(BOOKS);
+    const books = of(this.temp_books)
+    console.log(books);
     return books;
   }
 
@@ -19,7 +22,7 @@ export class BookService {
     // const book = of(BOOKS.find(book => book.id === id)).pipe(
     //   catchError(this.handleError<Book>(`getBook id=${id}`))
     // );
-    const book = BOOKS.find(book => book.id === id)!;
+    const book = this.temp_books.find(book => book.id === id)!;
     return of(book);
   }
 
