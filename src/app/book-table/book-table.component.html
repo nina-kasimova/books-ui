@@ -5,7 +5,7 @@
       {{column.label}}
     </th>
   </tr>
-  <tr *ngFor="let b of books">
+  <tr *ngFor="let b of books"
     (click) = "onClick(b)">
     <td>{{ b.id}}</td>
     <td>{{ b.title}}</td>

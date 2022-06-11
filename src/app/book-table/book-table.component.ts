@@ -11,13 +11,13 @@ import booksData from '../books.json';
 })
 export class BookTableComponent implements OnInit {
 
+  books: Book[] = booksData;
+
   constructor(
     private router: Router,
     private bookService: BookService
   ) {
   }
-
-  books: Book[] = booksData;
 
   title = 'Book Browser';
 
@@ -30,7 +30,8 @@ export class BookTableComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.getBooks();
+    //this.getBooks();
+    console.log(this.books);
   }
 
   getBooks(): void {
