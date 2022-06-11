@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Book } from "./book";
 import {catchError, Observable, of, tap} from "rxjs";
-import booksData from './books.json';
+import booksData from './books_info.json';
 
 @Injectable({
   providedIn: 'root'

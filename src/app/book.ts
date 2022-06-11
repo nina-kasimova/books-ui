@@ -1,11 +1,10 @@
 export interface Book {
   id: number;
-  title: string;
+  book_title: string;
   author?: string;
   description?: string;
-  rating?: number;
-  reviewCount?: number;
+  avg_rating?: number;
+  review_count?: number;
   genre?: string;
-  shelves?: string[];
   url?: string;
 }
