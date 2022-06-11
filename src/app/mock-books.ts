@@ -1,6 +1,7 @@
 import { Book } from "./book";
 
 export const BOOKS: Book[] = [
+
   // {
   //   id: 1,
   //   title: 'The Lord of the Rings',
@@ -19,4 +20,5 @@ export const BOOKS: Book[] = [
   //   author: 'J.D. Salinger',
   //   description: 'The Catcher in the Rye.',
   //   rating: 4.5}
+
   ];

@@ -19,15 +19,19 @@ export class BookTableComponent implements OnInit {
   ) {
   }
 
+  selectedBook?: Book;
+
   title = 'Book Browser';
 
   headers = [
     {key: 'id', label: 'ID'},
     { key: 'title', label: 'Title' },
     { key: 'author', label: 'Author' },
-    { key: 'description', label: 'Description' },
+    { key: 'genre', label: 'Genre' },
     { key: 'rating', label: 'Rating' }
   ];
+
+  attributes = ['id', 'title', 'author', 'genre', 'rating'];
 
   ngOnInit(): void {
     //this.getBooks();
@@ -39,8 +43,9 @@ export class BookTableComponent implements OnInit {
       .subscribe(books => this.books = books);
   }
 
-
   onClick(book: Book) {
+    this.selectedBook = book;
+    console.log("book is selected",this.selectedBook);
     this.router.navigate(['/details/', book.id]);//then(r => console.log(r));
   }
 }

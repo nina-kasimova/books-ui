@@ -1,8 +1,11 @@
 export interface Book {
-    id: number;
-    title: string;
-    author: string;
-    genre: string;
-    description: string;
-    rating: number;
-  }
+  id: number;
+  title: string;
+  author?: string;
+  description?: string;
+  rating?: number;
+  reviewCount?: number;
+  genre?: string;
+  shelves?: string[];
+  url?: string;
+}

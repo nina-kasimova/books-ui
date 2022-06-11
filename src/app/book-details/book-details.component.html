@@ -1,1 +1,10 @@
-<p>book-details works!</p>
+<nav>
+  <a routerLink="/browser">List of Books</a>
+</nav>
+<div class="book-details" *ngIf="book">
+    <h2>{{book.title}}</h2>
+  <div class="description">
+    {{book.description}}
+  </div>
+
+</div>
