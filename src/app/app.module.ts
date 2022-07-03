@@ -8,6 +8,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { BookTableComponent } from './book-table/book-table.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     AppRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    AgGridModule.withComponents(null)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,19 +1,11 @@
 <h1>{{title}}</h1>
-<table id="users">
-  <tr>
-    <th *ngFor="let column of headers">
-      {{column.label}}
-    </th>
-  </tr>
-  <tr *ngFor="let b of books"
-    (click) = "onClick(b)">
-    <td>{{ b.id}}</td>
-    <td>{{ b.book_title}}</td>
-    <td>{{ b.author}}</td>
-    <td>{{ b.genre}}</td>
-    <td>{{ b.avg_rating}}</td>
-  </tr>
-</table>
+
+<ag-grid-angular
+  style="width: 700px; height: 500px;"
+  class="ag-theme-balham"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs">
+</ag-grid-angular>
 
 <footer *ngIf="selectedBook">
   <app-book-details

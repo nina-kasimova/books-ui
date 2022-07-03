@@ -28,6 +28,17 @@ export class BookTableComponent implements OnInit {
     { key: 'rating', label: 'Rating' }
   ];
 
+  columnDefs = [
+    {headerName: 'Make', field: 'make'},
+    {headerName: 'Model', field: 'model'},
+    {headerName: 'Price', field: 'price'}
+  ];
+  rowData = [
+    {make: 'Toyota', model: 'Celica', price: 35000},
+    {make: 'Ford', model: 'Mondeo', price: 32000},
+    {make: 'Porsche', model: 'Boxter', price: 72000}
+  ];
+
   attributes = ['id', 'title', 'author', 'genre', 'rating'];
 
   ngOnInit(): void {
