@@ -1,0 +1,33 @@
+{
+  "books": [
+    {
+      "id": 0,
+      "book_title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "avg_rating": 4.27,
+      "review_count": 5040621
+    },
+    {
+      "id": 1,
+      "book_title": "cofee",
+      "author": "bob bobby",
+      "avg_rating": 3.42,
+      "review_count": 5040621
+    },
+    {
+      "id": 2,
+      "book_title": "lamp",
+      "author": "john smith",
+      "avg_rating": 4.20,
+      "review_count": 5040621
+    },
+    {
+      "id": 3,
+      "book_title": "bird",
+      "author": "joe lane",
+      "avg_rating": 2.27,
+      "review_count": 5040621
+    }
+  ]
+}
+
