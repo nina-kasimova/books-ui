@@ -30,10 +30,10 @@ export class BookTableComponent implements OnInit {
   ];
 
   columnDefs = [
-    {headerName: 'Make', field: 'id'},
-    {headerName: 'title', field: 'book_title'},
-    {headerName: 'author', field: 'author'},
-    {headerName: 'rating', field: 'avg_rating'},
+    {headerName: 'ID', field: 'id'},
+    {headerName: 'Title', field: 'book_title'},
+    {headerName: 'Author', field: 'author'},
+    {headerName: 'Rating', field: 'avg_rating'},
     {headerName: 'Reviews', field: 'review_count'}
   ];
   // rowData = [
