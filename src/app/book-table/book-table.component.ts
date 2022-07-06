@@ -16,18 +16,15 @@ export class BookTableComponent implements OnInit {
     private bookService: BookService
   ) {
   }
+
   selectedBook?: Book;
   books: Book[] = [];
 
   title = 'Book Browser';
 
-  headers = [
-    {key: 'id', label: 'ID'},
-    { key: 'title', label: 'Title' },
-    { key: 'author', label: 'Author' },
-    { key: 'genre', label: 'Genre' },
-    { key: 'rating', label: 'Rating' }
-  ];
+  defaultColDef = {
+    sortable: true
+  };
 
   columnDefs = [
     {headerName: 'ID', field: 'id'},
@@ -36,11 +33,7 @@ export class BookTableComponent implements OnInit {
     {headerName: 'Rating', field: 'avg_rating'},
     {headerName: 'Reviews', field: 'review_count'}
   ];
-  // rowData = [
-  //   {make: 'Toyota', model: 'Celica', price: 35000},
-  //   {make: 'Ford', model: 'Mondeo', price: 32000},
-  //   {make: 'Porsche', model: 'Boxter', price: 72000}
-  // ];
+
   rowData = [];
 
   attributes = ['id', 'title', 'author', 'genre', 'rating'];
