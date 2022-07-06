@@ -36,8 +36,6 @@ export class BookTableComponent implements OnInit {
 
   rowData = [];
 
-  attributes = ['id', 'title', 'author', 'genre', 'rating'];
-
   ngOnInit(): void {
     this.getBooks();
     fetch('http://localhost:3000/books')
