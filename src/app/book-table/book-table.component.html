@@ -1,11 +1,10 @@
 <h1>{{title}}</h1>
 
-<ag-grid-angular id="users"
-  style="width: 700px; height: 500px;"
+<ag-grid-angular id="book-table"
+  style="width: 80%; height: 800px; box-sizing: border-box;"
   class="ag-theme-balham"
   [rowData]="rowData"
-  [columnDefs]="columnDefs"
-  [defaultColDef]="defaultColDef">
+  [columnDefs]="columnDefs">
 </ag-grid-angular>
 
 <footer *ngIf="selectedBook">

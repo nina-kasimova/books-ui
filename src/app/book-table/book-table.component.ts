@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../book';
 import { Router} from "@angular/router";
 import { BookService } from '../book.service';
+import {
+  ColDef,
+  ColumnResizedEvent,
+  Grid,
+  GridOptions,
+} from 'ag-grid-community';
 
 
 @Component({
@@ -22,17 +28,27 @@ export class BookTableComponent implements OnInit {
 
   title = 'Book Browser';
 
-  defaultColDef = {
-    sortable: true
-  };
-
-  columnDefs = [
+  columnDefs: ColDef[] = [
     {headerName: 'ID', field: 'id'},
     {headerName: 'Title', field: 'book_title'},
     {headerName: 'Author', field: 'author'},
-    {headerName: 'Rating', field: 'avg_rating'},
-    {headerName: 'Reviews', field: 'review_count'}
+    {headerName: 'Rating', field: 'avg_rating', filter: 'agNumberColumnFilter'},
+    {headerName: 'Reviews', field: 'review_count', filter: 'agNumberColumnFilter'}
   ];
+
+  gridOptions: GridOptions = {
+    defaultColDef: {
+      sortable: true,
+      resizable: true
+    },
+    columnDefs: this.columnDefs,
+    rowData: null
+
+  }
+
+  sizeToFit() {
+    this.gridOptions.api!.sizeColumnsToFit();
+  }
 
   rowData = [];
 
@@ -42,7 +58,6 @@ export class BookTableComponent implements OnInit {
       .then(result => result.json())
       .then(rowData => this.rowData = rowData);
     console.log(typeof this.rowData);
-    //this.rowData = shortData;
   }
 
   getBooks(): void {
