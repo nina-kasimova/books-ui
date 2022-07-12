@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Book } from '../book';
 import { Router} from "@angular/router";
 import { BookService } from '../book.service';
-import { BookBrowserGrid} from "./book-browser-grid";
+import {ColDef, GridOptions} from "ag-grid-community";
+import {AgGridAngular} from "ag-grid-angular";
 
 
 @Component({
@@ -18,34 +19,35 @@ export class BookTableComponent implements OnInit {
   ) {
   }
 
-  booksGrid = new BookBrowserGrid();
-  gridOptions = this.booksGrid.gridOptions;
+  private api: any;
+  private columnApi: any;
+
+  columnDefs: ColDef[] = [
+    {headerName: 'ID', field: 'id'},
+    {headerName: 'Title', field: 'book_title'},
+    {headerName: 'Author', field: 'author'},
+    {headerName: 'Rating', field: 'avg_rating', filter: 'agNumberColumnFilter'},
+    {headerName: 'Reviews', field: 'review_count', filter: 'agNumberColumnFilter'}
+  ];
+
+  gridOptions: GridOptions = {
+    defaultColDef: {
+      sortable: true,
+      resizable: true
+    },
+    columnDefs: this.columnDefs,
+    rowData: null
+  }
+  onGridReady = (params: { api: any; columnApi: any; }) => {
+    this.api = params.api;
+    this.columnApi = params.columnApi;
+    this.gridOptions.api?.sizeColumnsToFit();
+  }
 
   selectedBook?: Book;
   books: Book[] = [];
 
   title = 'Book Browser';
-  //
-  // columnDefs: ColDef[] = [
-  //   {headerName: 'ID', field: 'id'},
-  //   {headerName: 'Title', field: 'book_title'},
-  //   {headerName: 'Author', field: 'author'},
-  //   {headerName: 'Rating', field: 'avg_rating', filter: 'agNumberColumnFilter'},
-  //   {headerName: 'Reviews', field: 'review_count', filter: 'agNumberColumnFilter'}
-  // ];
-  //
-  // gridOptions: GridOptions = {
-  //   defaultColDef: {
-  //     sortable: true,
-  //     resizable: true
-  //   },
-  //   columnDefs: this.columnDefs,
-  //   rowData: null
-  // }
-  //
-  // sizeToFit() {
-  //   this.gridOptions.api!.sizeColumnsToFit();
-  // }
 
   rowData = [];
 

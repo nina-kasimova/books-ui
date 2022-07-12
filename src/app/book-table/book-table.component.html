@@ -3,6 +3,7 @@
 <ag-grid-angular id="book-table"
   style="width: 80%; height: 800px; box-sizing: border-box;"
   class="ag-theme-balham"
+  (gridReady)="onGridReady($event)"
   [rowData]="rowData"
   [gridOptions]="gridOptions">
 </ag-grid-angular>
