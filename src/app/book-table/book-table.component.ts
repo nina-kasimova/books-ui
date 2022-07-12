@@ -1,9 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import { Book } from '../book';
+import { Component, OnInit } from '@angular/core';
 import { Router} from "@angular/router";
-import { BookService } from '../book.service';
-import {ColDef, GridOptions} from "ag-grid-community";
-import {AgGridAngular} from "ag-grid-angular";
+import { ColDef, GridOptions, RowClickedEvent } from "ag-grid-community";
 
 
 @Component({
@@ -14,18 +11,20 @@ import {AgGridAngular} from "ag-grid-angular";
 export class BookTableComponent implements OnInit {
 
   constructor(
-    private router: Router,
-    private bookService: BookService
+    private router: Router
   ) {
   }
+
+  title = 'Book Browser';
+  rowData = [];
 
   private api: any;
   private columnApi: any;
 
   columnDefs: ColDef[] = [
     {headerName: 'ID', field: 'id'},
-    {headerName: 'Title', field: 'book_title'},
-    {headerName: 'Author', field: 'author'},
+    {headerName: 'Title', field: 'book_title', filter: 'agTextColumnFilter'},
+    {headerName: 'Author', field: 'author', filter: 'agTextColumnFilter'},
     {headerName: 'Rating', field: 'avg_rating', filter: 'agNumberColumnFilter'},
     {headerName: 'Reviews', field: 'review_count', filter: 'agNumberColumnFilter'}
   ];
@@ -35,37 +34,26 @@ export class BookTableComponent implements OnInit {
       sortable: true,
       resizable: true
     },
+    onRowClicked: event => this.onRowClick(event),
     rowHeight: 50,
     columnDefs: this.columnDefs,
     rowData: null
   }
+
   onGridReady = (params: { api: any; columnApi: any; }) => {
     this.api = params.api;
     this.columnApi = params.columnApi;
     this.gridOptions.api?.sizeColumnsToFit();
   }
 
-  selectedBook?: Book;
-  books: Book[] = [];
-
-  title = 'Book Browser';
-
-  rowData = [];
-
   ngOnInit(): void {
-    this.getBooks();
     fetch('http://localhost:3000/books')
       .then(result => result.json())
       .then(rowData => this.rowData = rowData);
   }
 
-  getBooks(): void {
-    this.bookService.getBooks()
-      .subscribe(books => this.books = books)
+  onRowClick(event: RowClickedEvent) {
+    this.router.navigate(['/details/', event.data['id']]);
   }
 
-  onClick(book: Book) {
-    this.selectedBook = book;
-    this.router.navigate(['/details/', book.id]);//then(r => console.log(r));
-  }
 }
