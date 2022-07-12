@@ -35,6 +35,7 @@ export class BookTableComponent implements OnInit {
       sortable: true,
       resizable: true
     },
+    rowHeight: 50,
     columnDefs: this.columnDefs,
     rowData: null
   }
