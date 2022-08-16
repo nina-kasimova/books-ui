@@ -7,4 +7,5 @@ export interface Book {
   review_count?: number;
   genre?: string;
   url?: string;
+  shelves?: string[];
 }
