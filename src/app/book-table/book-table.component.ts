@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from "@angular/router";
 import { ColDef, GridOptions, RowClickedEvent } from "ag-grid-community";
+import { BookService} from "../book.service";
 
 
 @Component({
@@ -11,12 +12,14 @@ import { ColDef, GridOptions, RowClickedEvent } from "ag-grid-community";
 export class BookTableComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private bookService: BookService
   ) {
   }
 
   title = 'Book Browser';
   rowData = [];
+  serverBooks: any;
 
   private api: any;
   private columnApi: any;
@@ -47,13 +50,16 @@ export class BookTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    fetch('http://localhost:3000/books')
-      .then(result => result.json())
-      .then(rowData => this.rowData = rowData);
+    this.getBooks();
+  }
+
+  getBooks() {
+    this.bookService.getBooks().subscribe(books => {
+      this.serverBooks = books;
+    });
   }
 
   onRowClick(event: RowClickedEvent) {
     this.router.navigate(['/details/', event.data['id']]);
   }
-
 }
