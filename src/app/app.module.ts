@@ -9,6 +9,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { BookTableComponent } from './book-table/book-table.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AgGridModule } from 'ag-grid-angular';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    HttpClientModule,
     AgGridModule.withComponents(null)
   ],
   providers: [],
