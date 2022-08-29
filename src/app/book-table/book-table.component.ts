@@ -43,6 +43,16 @@ export class BookTableComponent implements OnInit {
     rowData: null
   }
 
+  bookListUrl = '';
+
+  printMessage(value: string) {
+    this.bookListUrl = value;
+  }
+
+  onClick(event: any) {
+    console.log(this.bookListUrl);
+  }
+
   onGridReady = (params: { api: any; columnApi: any; }) => {
     this.api = params.api;
     this.columnApi = params.columnApi;

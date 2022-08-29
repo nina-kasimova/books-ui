@@ -1,9 +1,24 @@
 <h1>{{title}}</h1>
+<div class="big-div">
+  <form class="example-form">
+    <mat-label>Enter a link</mat-label>
+    <input #box matInput
+       placeholder="url"
+       value=""
+       (keyup.enter)="printMessage(box.value)"
+       (blur)="printMessage(box.value)">
+    <p>{{bookListUrl}}</p>
+    <button
+      type='button'
+      (click)="onClick($event)"> Search
+    </button>
+  </form>
 
-<ag-grid-angular id="book-table"
-  style="width: 80%; height: 800px; box-sizing: border-box;"
-  class="ag-theme-balham"
-  (gridReady)="onGridReady($event)"
-  [rowData]="serverBooks"
-  [gridOptions]="gridOptions">
-</ag-grid-angular>
+  <ag-grid-angular id="book-table"
+     style="width: 80%; height: 800px; box-sizing: border-box;"
+     class="ag-theme-balham"
+     (gridReady)="onGridReady($event)"
+     [rowData]="serverBooks"
+     [gridOptions]="gridOptions">
+  </ag-grid-angular>
+</div>

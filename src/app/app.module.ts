@@ -10,6 +10,8 @@ import { BookTableComponent } from './book-table/book-table.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatPaginatorModule,
     MatSortModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
     AgGridModule.withComponents(null)
   ],
   providers: [],
