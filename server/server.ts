@@ -1,8 +1,8 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('server/db.json');
+const router = jsonServer.router('/Users/nina/Desktop/web/ui-data/books-list.json');
 const middlewares = jsonServer.defaults();
-const db = require('./db.json');
+const db = require('/Users/nina/Desktop/web/ui-data/books-list.json');
 const fs = require('fs');
 
 server.use(middlewares);
