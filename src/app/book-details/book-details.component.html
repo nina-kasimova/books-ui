@@ -3,6 +3,9 @@
 </nav>
 <div class="book-details" *ngIf="book">
     <h2>{{book.book_title}}</h2>
+  <p> by {{book.author}}</p>
+  <p> Reviews: {{book.review_count}}</p>
+  <p> Rating: {{book.avg_rating}}</p>
   <div class="description">
     {{book.description}}
   </div>
