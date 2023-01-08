@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Data server 
 
-Run `npm run server` to start the data server. It's located at `http://localhost:3000/`
+Run `npm run server` from the books-ui folder (web/books-ui) to start the data server. It's located at `http://localhost:3000/`
 
 ## Code scaffolding
 
