@@ -20,5 +20,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Load Data
 
+Doesn't work anymore cos they changed design and it obviously was a bad way to get data
+
 Run python script `scraper.py` to download data from a provided list of books. Read instructions in that repo on how to do that
 Don't make any changes in this project, just rerun the server
