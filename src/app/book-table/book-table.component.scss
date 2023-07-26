@@ -44,3 +44,10 @@ input {
 .example-full-width {
   width: 100%;
 }
+
+footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
+}
